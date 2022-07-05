@@ -11,6 +11,7 @@ class Rule:
         self.reverse = reverse
 
 # (Trigger, Active, Word, Delete above, Before, Reverse
+### in what cases would be want these rules not to be active?
 rules = [
     Rule(3, False, "Fizz", False, "?", False),
     Rule(5, False, "Buzz", False, "?", False),
@@ -19,6 +20,7 @@ rules = [
     Rule(13, False, "Fezz", False, "B", False),
     Rule(17, False, "", False, "?", True)
 ]
+
 
 def outputString(n):
     output = []
@@ -29,6 +31,8 @@ def outputString(n):
             if rule.deleteAbove:
                 output = []
 
+            ### see what you can do to make these comments more readable
+            ### extention to that what can you do to your code to make it more readable that a comment isn't required?
             # Place correctly
             if(rule.before != "?"):
                 # Python is awful
@@ -48,11 +52,12 @@ def outputString(n):
 
     return output
 
-
+### Should be able to run this without any additional commands at the start
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     max = int(sys.argv[1])
-
+    
+    ### Any extra rules or inputs should be requested from the user after the program has started running
     for j in range(2, len(sys.argv)):
         for rule in range(0, len(rules)):
             if int(sys.argv[j]) == rules[rule].trigger:
